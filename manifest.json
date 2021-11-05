@@ -1,0 +1,46 @@
+{
+    "manifest_version":2,
+    "name":"CrackVip",
+    "version":"0.0.1",
+    "description":"crack some webApp's VIP",
+    "icons":{
+        "16":"img/icon.png",
+        "48":"img/icon.png",
+        "128":"img/icon.png"
+    },
+    "background":{
+        "page":"background.html"
+    },
+    "browser_action":{
+        "default_icon":"img/icon.png",
+        "default_title":"CrackVip by Soft98",
+        "default_popup":"popup.html"
+    },
+    "options_ui":
+    {
+        "page": "options.html",
+        "chrome_style": false
+    },
+    "content_scripts":[
+        {
+            "matches":["<all_urls>"],
+            "js":["content_scripts.js"],
+            "run_at":"document_start"
+        }
+    ],
+    "omnibox": { "keyword" : "rt" },
+    "web_accessible_resources":[
+        "options.html"
+    ],
+    "permissions":[
+        "contextMenus",
+        "tabs",
+        "notifications",
+        "webRequest",
+        "webRequestBlocking",
+        "storage",
+        "http://*/*",
+        "https://*/*"
+    ],
+    "homepage_url":"https://github.com/soft98-top/CrackVip"
+}
